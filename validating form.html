@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>validating form</title>
+<script type="text/javascript">
+
+function validate()
+{
+
+var name = document.getElementById('Name').value;
+var alpha = /^[a-zA-Z]+$/ ;
+
+var age = document.getElementById("Age").value;
+var num = /^[0-9]+$/;
+
+var gender= document.getElementsByName("Gender");
+
+if (name == "")
+{
+alert("Name cannot be empty");
+Name.focus();
+return false;
+}
+
+else
+if (name.length <= 5 )
+{
+alert("Name length should be greater than 5");
+Name.focus();
+return false;
+}
+
+else
+if (!name.match(alpha))
+{
+alert("Name cannot contain numbers");
+Name.focus();
+return false;
+}
+
+else
+if(age == "")
+{
+alert("Age cannot be empty");
+Age.focus();
+return false;
+}
+
+else
+if (age<15 || age>120)
+{
+alert("Age cannot be less than 15 or greater than 120");
+Age.focus();
+return false;
+}
+
+else
+if(!age.match(num))
+{
+alert("Age cannot be a alphabet");
+Age.focus();
+return false;
+}
+
+else
+if ((gender[0].checked == false) && (gender[1].checked == false))
+{
+alert("Gender cannot be empty");
+return false;
+}
+
+
+alert("Form Validation Succesful");
+return true;
+
+
+}
+
+
+</script>
+
+</head>
+<body>
+
+<div class="container">
+<h1 align="center">USER DETAILS FORM<br><br></h1>
+<div align="center">
+
+<form class="myform" name="getdetails" onsubmit="return validate()">
+Name : &nbsp;<span class="space"></span><input type="text" id="Name" placeholder="Enter name"><br><br>
+
+Age &nbsp;&nbsp;&nbsp;: &nbsp;<input type="text" id="Age" placeholder="Enter age"><br><br>
+
+Gender &nbsp;:<span style="padding-right: 30px"></span> <input type="radio" name="Gender" value="male">Male &nbsp;&nbsp; <input type="radio" name="Gender" value="female">Female <br> <br> <br>
+
+<input class="submit" type="submit" name="submit" value="submit">
+
+</form>
+</div>
+</div>
+
+
+
+</body>
+</html>
