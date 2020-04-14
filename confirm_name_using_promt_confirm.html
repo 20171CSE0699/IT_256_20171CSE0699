@@ -1,0 +1,38 @@
+<!Confirm your name using prompt and confirm boxes>
+<html>
+<head>
+<title>que2</title>
+<script type="text/javascript">
+
+function getvalue()
+{
+var retval=prompt("Enter your name:","your name here");
+document.write("you have entered:"+retval);
+}
+
+function getconfirmation()
+{
+var retval=confirm("Is your name swathi");
+if(retval==true)
+{
+document.write("confirmed");
+return true;
+}
+else
+{
+document.write("not confirmed");
+return false;
+}
+}
+
+
+</script>
+<body>
+<p>Confirm your name using confirm and promt boxes</p>
+<form>
+<input type="button" value="promt" onclick="getvalue();">
+<input type="button" value="confirm" onclick="getconfirmation();"/>
+</form>
+</body>
+</head>
+</html>
